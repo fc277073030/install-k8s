@@ -86,6 +86,7 @@ spec:
         image: fc277073030/metrics-server:v0.3.7
         imagePullPolicy: IfNotPresent
         args:
+          - --kubelet-preferred-address-types=InternalIP
           - --kubelet-insecure-tls
           - --cert-dir=/tmp
           - --secure-port=4443
