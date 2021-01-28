@@ -35,7 +35,7 @@ labels: {}
 extraArgs:
   - --enable-skip-login
   - --enable-insecure-login
-  - --system-banner="Welcome to Kubernetes"
+  - --system-banner="Welcome to MicroK8s"
 
 ## Additional container environment variables
 ##
@@ -130,14 +130,14 @@ ingress:
   # labels:
   #   key: value
   annotations:
-    kubernetes.io/ingress.class: traefik
+    kubernetes.io/ingress.class: nginx
   #   kubernetes.io/tls-acme: 'true'
   ## If you plan to use TLS backend with enableInsecureLogin set to false
   ## (default), you need to uncomment the below.
   ## If you use ingress-nginx < 0.21.0
   #   nginx.ingress.kubernetes.io/secure-backends: "true"
   ## if you use ingress-nginx >= 0.21.0
-  #   nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 
 
   ## Kubernetes Dashboard Ingress paths
@@ -162,15 +162,15 @@ ingress:
   ## Must be provided if Ingress is enabled
   ##
   hosts:
-    - k8s-dashboard.local
+    - k8s-dashboard.fc277073030.com
 
   ## Kubernetes Dashboard Ingress TLS configuration
   ## Secrets must be manually created in the namespace
   ##
-  # tls:
-  #   - secretName: kubernetes-dashboard-tls
-  #     hosts:
-  #       - kubernetes-dashboard.domain.com
+  tls:
+    - secretName: k8s-dashboard-tls
+      hosts:
+        - k8s-dashboard.fc277073030.com
 
 settings: {}
   ## Cluster name that appears in the browser window title if it is set
