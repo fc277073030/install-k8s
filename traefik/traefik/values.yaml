@@ -60,7 +60,7 @@ podDisruptionBudget:
 ingressClass:
   # true is not unit-testable yet, pending https://github.com/rancher/helm-unittest/pull/12
   enabled: true
-  isDefaultClass: true
+  isDefaultClass: false
 
 # Activate Pilot integration
 pilot:
