@@ -184,7 +184,7 @@ updateStrategy: {}
 
 # if minReplicas is >1, shared storage MUST be used.
 hpa:
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 10
   cpu:
     targetAverageUtilization: 75

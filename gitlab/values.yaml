@@ -48,11 +48,16 @@ global:
   hosts:
     domain: fc277073030.com
     hostSuffix:
-    https: true
+    https: false
     externalIP:
     ssh: ~
     gitlab: {}
-    minio: {}
+    minio:
+      ingress:
+        enable: false
+      name: gitlab-minio.fc277073030.com
+      tls:
+        enable: false
     registry: {}
     tls: {}
     smartcard: {}
@@ -61,6 +66,7 @@ global:
 
   ## doc/charts/globals.md#configure-ingress-settings
   ingress:
+    class: "nginx"
     configureCertmanager: false
     annotations: {}
     enabled: true
@@ -711,7 +717,7 @@ nginx-ingress:
 ## Installation & configuration of stable/prometheus
 ## See requirements.yaml for current version
 prometheus:
-  install: true
+  install: false
   rbac:
     create: true
   alertmanager:

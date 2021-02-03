@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    traefik.ingress.kubernetes.io/ssl-redirect: "true"
+  name: kubernetes-dashboard
+  namespace: kube-system
+spec:
+#  tls:
+#  - hosts:
+#    - k8s2-dashboard.fc277073030.com
+#    secretName: kubernetes-dashboard-certs
+  rules:
+  - host: k8s2-dashboard.fc277073030.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kubernetes-dashboard
+          servicePort: 443
