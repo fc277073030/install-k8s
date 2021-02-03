@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitlab
+spec:
+  destination:
+    name: ''
+    namespace: gitlab
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: gitlab
+    repoURL: 'https://github.com/fc277073030/install-k8s.git'
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: global.hosts.minio.tls.enable
+          value: 'false'
+        - name: global.minio.credentials.secret
+          value: ''
+        - name: global.hosts.minio.ingress.enable
+          value: 'true'
+        - name: global.hosts.minio.name
+          value: minio.fc277073030.com
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
