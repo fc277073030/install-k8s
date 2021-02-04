@@ -233,10 +233,12 @@ global:
     kas: {}
     minio:
       ingress:
-        enable: false
+        enable: true
+        tls:
+          enable: true
+          secretName: gitlab-minio-tls
       name: gitlab-minio.fc277073030.com
-      tls:
-        enable: false
+
     pages: {}
     registry: {}
     smartcard: {}
@@ -262,9 +264,7 @@ global:
       fsGroup: 65534
       runAsUser: 65534
   minio:
-    credentials:
-      secret: minio-tls
-    enabled: true
+    credentials: {}
   operator:
     enabled: false
     rollout:
