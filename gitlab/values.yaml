@@ -56,8 +56,6 @@ global:
       ingress:
         enable: false
       name: gitlab-minio.fc277073030.com
-      tls:
-        enable: false
     registry: {}
     tls: {}
     smartcard: {}
@@ -473,7 +471,7 @@ global:
   registry:
     bucket: registry
     certificate: 
-      secret: registry-tls
+      secret:
     httpSecret: {}
       # secret:
       # key:
