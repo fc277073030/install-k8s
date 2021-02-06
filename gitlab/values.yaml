@@ -51,12 +51,15 @@ global:
     https: false
     externalIP:
     ssh: ~
-    gitlab: {}
+    gitlab:
+      name: gitlab.fc277073030.com
+      https: true
     minio:
-      ingress:
-        enable: false
       name: gitlab-minio.fc277073030.com
-    registry: {}
+      https: true
+    registry:
+      name: gitlab-registry.fc277073030.com
+      https: true
     tls: {}
     smartcard: {}
     kas: {}
