@@ -1,0 +1,28 @@
+apiVersion: velero.io/v1
+kind: BackupStorageLocation
+metadata:
+  name: default
+  namespace: velero
+spec:
+# 只有 aws gcp azure
+  provider: aws
+  # 存储主要配置
+  objectStorage:
+  # bucket 的名称
+    bucket: myBucket
+    # bucket内的
+    prefix: backup
+# 不同的 provider 不同的配置
+  config:
+    #bucket地区
+    region: us-west-2
+    # s3认证信息
+    profile: "default"
+    # 使用 Minio 的时候加上，默认为 false
+    # AWS 的 S3 可以支持两种 Url Bucket URL
+    # 1 Path style URL： http://s3endpoint/BUCKET
+    # 2 Virtual-hosted style URL： http://oss-cn-beijing.s3endpoint 将 Bucker Name 放到了 Host Header中
+    # 3 阿里云仅仅支持 Virtual hosted 如果下面写上 true, 阿里云 OSS 会报错 403
+    s3ForcePathStyle: "false"
+    # s3的地址，格式为 http://minio:9000
+    s3Url: http://minio:9000

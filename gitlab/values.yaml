@@ -608,7 +608,7 @@ global:
 
   ## docs/charts/globals.md#service-accounts
   serviceAccount:
-    enabled: false
+    enabled: true
     create: true
     annotations: {}
     ## Name to be used for serviceAccount, otherwise defaults to chart fullname
