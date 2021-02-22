@@ -1,3 +1,4 @@
+kubectl create ns gitlab
 helm -n gitlab upgrade -i -f values.yaml gitlab . \
   --set certmanager.install=false \
   --set global.ingress.configureCertmanager=false \

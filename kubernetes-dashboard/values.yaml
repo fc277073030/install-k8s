@@ -35,7 +35,7 @@ labels: {}
 extraArgs:
   - --enable-skip-login
   - --enable-insecure-login
-  - --system-banner="Welcome to MicroK8s"
+  - --system-banner="Hello FanChao"
 
 ## Additional container environment variables
 ##
