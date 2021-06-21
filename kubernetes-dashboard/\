@@ -35,7 +35,7 @@ labels: {}
 extraArgs:
   - --enable-skip-login
   - --enable-insecure-login
-  - --system-banner="IPC-TEST"
+  - --system-banner="Hello FanChao"
 
 ## Additional container environment variables
 ##
@@ -162,15 +162,15 @@ ingress:
   ## Must be provided if Ingress is enabled
   ##
   hosts:
-    - ipctest.arnoo.com
+    - k8s-dashboard.fc277073030.com
 
   ## Kubernetes Dashboard Ingress TLS configuration
   ## Secrets must be manually created in the namespace
   ##
   tls:
-    - secretName: arnoo-tls
+    - secretName: k8s-dashboard-tls
       hosts:
-        - ipctest.arnoo.com
+        - k8s-dashboard.fc277073030.com
 
 settings: {}
   ## Cluster name that appears in the browser window title if it is set
