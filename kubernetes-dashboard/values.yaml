@@ -162,7 +162,7 @@ ingress:
   ## Must be provided if Ingress is enabled
   ##
   hosts:
-    - ipctest.arnoo.com
+    - ipctest-k8s.arnoo.com
 
   ## Kubernetes Dashboard Ingress TLS configuration
   ## Secrets must be manually created in the namespace
@@ -170,7 +170,7 @@ ingress:
   tls:
     - secretName: arnoo-tls
       hosts:
-        - ipctest.arnoo.com
+        - ipctest-k8s.arnoo.com
 
 settings: {}
   ## Cluster name that appears in the browser window title if it is set
